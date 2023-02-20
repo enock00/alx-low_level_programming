@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - Entry Point
- * Description: "prints all single digit, followed by a new line"
+ * Description: "prints single digit, followed by a new line"
  * Return: Always 0
  */
 int main(void)
