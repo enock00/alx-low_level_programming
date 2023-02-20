@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - Entry point
- * Description: "printing all letters except q and e"
+ * Description: "printing all alphabets except q and e"
  * Return: Always 0
  */
 int main(void)
