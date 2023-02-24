@@ -21,8 +21,10 @@ void print_triangle(int size)
 				continue;
 
 			_putchar('\n');
+			b++;
 		}
 
 		_putchar('\n');
 	}
+	_putchar('\n');
 }
