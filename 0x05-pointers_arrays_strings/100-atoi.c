@@ -29,8 +29,11 @@ int _atoi(char *s)
 				break;
 			}
 			a++;
+			ni *= min;
+		
 		}
 
 
 	}
+	return (nil);
 }
