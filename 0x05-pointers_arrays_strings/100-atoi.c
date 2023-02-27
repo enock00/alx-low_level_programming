@@ -8,6 +8,8 @@
  */
 int _atoi(char *s)
 {
+
+
 	int a = 0;
 	unsigned int ni = 0;
 	int min = 1;
@@ -31,6 +33,8 @@ int _atoi(char *s)
 			a++;
 			ni *= min;
 		}
-
+	}
 	return (ni);
+
+
 }
