@@ -30,10 +30,7 @@ int _atoi(char *s)
 			}
 			a++;
 			ni *= min;
-		
 		}
 
-
-	}
-	return (nil);
+	return (ni);
 }
