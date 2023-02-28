@@ -10,23 +10,44 @@
 */
 int main(void)
 {
-    char password[7];
-    int i, random_num;
+	char paswd[84];
+	int index = 0, sum = 0, diff_half1, diff_half2;
 
-    srand(time(NULL));
+	srand(time(0));
 
-    for (i = 0; i < 6; i++) {
-        random_num = rand() % 62;
+	while (sum < 2772)
+	{
+		paswd[index] = 33 + rand() % 94;
+		sum += paswd[index++];
+	}
 
-        if (random_num < 26) {
-            password[i] = 'A' + random_num;
-        } else if (random_num < 52) {
-            password[i] = 'a' + random_num - 26;
-        } else {
-            password[i] = '0' + random_num - 52;
-        }
-    }
-    printf("Generated password: %s\n", password);
-    return 0;
+	paswd[index] = '\0';
+
+	if (sum != 2772)
+	{
+		diff_half1 = (sum - 2772) / 2;
+		diff_half2 = (sum - 2772) / 2;
+		if ((sum - 2772) % 2 != 0)
+			diff_half1++;
+
+		for (index = 0; paswd[index]; index++)
+		{
+			if (paswd[index] >= (33 + diff_half1))
+			{
+				paswd[index] -= diff_half1;
+				break;
+			}
+		}
+		for (index = 0; paswd[index]; index++)
+		{
+			if (paswd[index] >= (33 + diff_half2))
+			{
+				paswd[index] -= diff_half2;
+				break;
+			}
+		}
+	}
+
+	printf("%s", paswd);
+	return (0);
 }
-
