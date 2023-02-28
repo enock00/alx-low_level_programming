@@ -1,34 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 /**
- *main - Create a program that generates random valid
- *passwords for the program 101-crackme
+ *main - Create a program that generates random valid passwords
+ * for the program 101-crackme
  *
  *Return: always 0
- */
+*/
 int main(void)
 {
-	int i, sum, n;
-	int pass[100];
+    char password[7];
+    int i, random_num;
 
-	sum = 0;
+    srand(time(NULL));
 
-	srand(time(NULL));
+    for (i = 0; i < 6; i++) {
+        random_num = rand() % 62;
 
-	for (i = 0; i < 100; i++)
-	{
-		pass[i] = rand() % 78;
-		sum += (pass[i] + '0');
-		putchar(pass[i] + ')');
-		if ((2772 - sum) - '0' < 78)
-		{
-			n = 2772 - sum - '0';
-			sum += n;
-			putchar(n + '0');
-			break;
-		}
-	}
-	return (0);
+        if (random_num < 26) {
+            password[i] = 'A' + random_num;
+        } else if (random_num < 52) {
+            password[i] = 'a' + random_num - 26;
+        } else {
+            password[i] = '0' + random_num - 52;
+        }
+    }
+
+    password[6] = '\0';
+
+    printf("Generated password: %s\n", password);
+
+    return 0;
 }
+
