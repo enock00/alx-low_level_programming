@@ -25,11 +25,6 @@ int main(void)
             password[i] = '0' + random_num - 52;
         }
     }
-
-    password[6] = '\0';
-
-    printf("Generated password: %s\n", password);
-
     return 0;
 }
 
