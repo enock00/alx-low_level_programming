@@ -6,21 +6,21 @@
  *Return: return x
  *
  */
-char *leet(char *)
+char *leet(char *x)
 {
 	int a, b;
 	char s1[] = "aAeEoOtTlL";
 	char s2[] = "4433007711";
 
-	for (a = 0; *a != '\0' a++;)
+	for (a = 0; x[a] != '\0'; a++)
 	{
 		for (b = 0; b < 10; b++)
 		{
-			if (*a == s1[b])
+			if (x[a] == s1[b])
 			{
-				*a = s2[b];
+				x[a] = s2[b];
 			}
 		}
 	}
-	return (*a);
+	return (x);
 }
