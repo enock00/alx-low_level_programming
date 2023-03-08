@@ -20,7 +20,7 @@ int is_prime_number(int n)
  * @n: Number to be tested.
  * @i: Number to test with.
  *
- * Return: Always 
+ * Return: Always
  */
 int prime_number(int n, int i)
 {
